@@ -1,8 +1,7 @@
-package com.cydeo.runner;
+package com.cydeo.runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.*;
+import org.junit.runner.*;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -13,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@SCRUM-1270"
 )
 public class CukesRunners {
 }

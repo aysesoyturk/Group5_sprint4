@@ -1,4 +1,4 @@
-package com.cydeo.runners;
+package com.cydeo.step_definitions;
 
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;

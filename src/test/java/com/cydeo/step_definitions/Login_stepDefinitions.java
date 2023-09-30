@@ -27,20 +27,23 @@ public class Login_stepDefinitions  {
     }
     @When("user enters {string} and {string}")
     public void user_enters_and(String username, String password) {
-            BrowserUtils.waitFor(1);
+            BrowserUtils.waitForClickablility(LoginPages.entersUsername, 1);
             LoginPages.entersUsername.click();
             LoginPages.entersUsername.sendKeys(username);
-            BrowserUtils.waitFor(1);
+            BrowserUtils.waitForClickablility(LoginPages.entersPassword,1);
             LoginPages.entersPassword.click();
             LoginPages.entersPassword.sendKeys(password);
     }
     @When("user sees the login button")
     public void user_sees_the_login_button() {
-        System.out.println("User sees the Log In button -> "+LoginPages.loginButton.isDisplayed());
+        System.out.println("User sees the Log In button -> "
+                +LoginPages.loginButton.isDisplayed());
     }
     @When("user clicks the login button")
     public void user_clicks_the_login_button() {
+        BrowserUtils.waitForClickablility(LoginPages.loginButton, 1);
         LoginPages.loginButton.click();
+
 
     }
     @When("user sees the Activity Stream")
@@ -53,11 +56,13 @@ public class Login_stepDefinitions  {
 
     @When("user enters valid username {string}")
     public void userEntersValidUsername(String validUsername) {
+        BrowserUtils.waitForClickablility(LoginPages.entersUsername,1);
         LoginPages.entersUsername.sendKeys(validUsername + Keys.ENTER);
     }
 
     @When("user enters invalid password {string}")
     public void userEntersInvalidPassword(String invalidPassword) {
+        BrowserUtils.waitForClickablility(LoginPages.entersPassword,1);
         LoginPages.entersPassword.sendKeys(invalidPassword + Keys.ENTER);
     }
 
@@ -70,11 +75,13 @@ public class Login_stepDefinitions  {
 
     @When("user enters invalid username {string}")
     public void userEntersInvalidUsername(String invalidUsername) {
+        BrowserUtils.waitForClickablility(LoginPages.entersUsername,1);
         LoginPages.entersUsername.sendKeys(invalidUsername + Keys.ENTER);
     }
 
     @When("user enters valid password {string}")
     public void userEntersValidPassword(String validPassword) {
+        BrowserUtils.waitForClickablility(LoginPages.entersPassword,1);
         LoginPages.entersPassword.sendKeys(validPassword + Keys.ENTER);
     }
 
@@ -87,6 +94,7 @@ public class Login_stepDefinitions  {
 
     @When("user enters the Forgot Your Password")
     public void userEntersTheForgotYourPassword() {
+        BrowserUtils.waitForClickablility(LoginPages.ForgotYourPasswordButton,1);
         LoginPages.ForgotYourPasswordButton.click();
 
     }
@@ -115,17 +123,20 @@ public class Login_stepDefinitions  {
 
     @When("user uses enter keyboard login button")
     public void userUsesEnterKeyboardLoginButton() {
+        BrowserUtils.waitForClickablility(LoginPages.loginButton,1);
         LoginPages.loginButton.sendKeys(Keys.ENTER);
 
     }
 
     @When("user clicks Login")
     public void userClicksLogin() {
+        BrowserUtils.waitForClickablility(LoginPages.entersUsername, 1);
         LoginPages.entersUsername.click();
     }
 
     @When("user clicks Password")
     public void userClicksPassword() {
+        BrowserUtils.waitForClickablility(LoginPages.entersPassword, 1);
         LoginPages.entersPassword.click();
     }
 

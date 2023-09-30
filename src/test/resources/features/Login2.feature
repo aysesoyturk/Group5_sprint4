@@ -1,6 +1,6 @@
 Feature: Login Function
   User Story: As a user, I should be able to log in
-
+@Smoke
   Scenario Outline: Positive Scenario-> User can login with valid credentials
     Given user lands on the login page
     When user sees the login page
@@ -8,7 +8,6 @@ Feature: Login Function
     When user sees the login button
     When user clicks the login button
     When user sees the Activity Stream
-
 
     Examples: Valid Credentials
       | username                       | password |
@@ -22,20 +21,38 @@ Feature: Login Function
       | marketing10@cybertekschool.com | UserUser |
       | marketing20@cybertekschool.com | UserUser |
 
-  Scenario: Negative Scenario-> If user uses the invalid credentials
+  Scenario Outline: Negative Scenario-> If user uses the invalid credentials
     Given user lands on the login page
     When user sees the login page
-    When user enters valid username "hr1@cybertekschool.com"
-    When user enters invalid password "useruser"
+    When user enters valid username "<invalidUserName>"
+    When user enters invalid password "<invalidPassword>"
     When user sees the login button
     When user clicks the login button
     When user sees warning messages
 
-  Scenario: Negative Scenario-> If user uses the invalid credentials
+    Examples: Invalid credentials
+      | invalidUserName        | invalidPassword |
+      | hr1@cybertakschool.com | user123         |
+      | student@gmail.com      | UserUser        |
+
+
+  Scenario: user enters the Forget Password
     Given user lands on the login page
     When user sees the login page
-    When user enters invalid username "hr1@gmail.com"
-    When user enters valid password "UserUser"
+    When user sees the Forgot Your Password
+    When user enters the Forgot Your Password
+    When user sees the forget password page
+
+  Scenario: user sees the "Remember me on this computer"
+    Given user lands on the login page
+    When user sees the login page
+    When user sees the Remember me on this computer
+    When user clickable the Remember me on this computer
+
+  Scenario: keyboard enter key can be used
+    Given user lands on the login page
+    When user sees the login page
+    When user enters "hr1@cybertekschool.com" and "UserUser"
     When user sees the login button
-    When user clicks the login button
-    When user sees warning messages
+    When user uses enter keyboard login button
+    When user sees the Activity Stream

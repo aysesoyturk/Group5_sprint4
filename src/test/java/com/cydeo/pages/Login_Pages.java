@@ -31,6 +31,17 @@ public class Login_Pages {
     @FindBy(xpath = "//*[@id='login-popup']/div[2]")
    public WebElement warningMessage;
 
+    @FindBy(xpath = "//*[text()='Forgot your password?']")
+    public WebElement ForgotYourPasswordButton;
+
+    @FindBy(xpath = "//*[@class='log-popup-header']")
+    public WebElement ForgotPasswordPage;
+
+    @FindBy(xpath = "//label[@class='login-item-checkbox-label']")
+    public WebElement RememberMe;
+
+    @FindBy(xpath = "//*[@id='USER_REMEMBER']")
+    public WebElement RememberMeCheckbox;
 
 
 }

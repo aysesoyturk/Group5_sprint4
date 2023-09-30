@@ -7,10 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 
 public class Login_stepDefinitions  {
 
     Login_Pages LoginPages = new Login_Pages();
+
 
     @Given("user lands on the login page")
     public void user_lands_on_the_login_page() {
@@ -72,5 +74,46 @@ public class Login_stepDefinitions  {
     @When("user enters valid password {string}")
     public void userEntersValidPassword(String validPassword) {
         LoginPages.entersPassword.sendKeys(validPassword + Keys.ENTER);
+    }
+
+    @When("user sees the Forgot Your Password")
+    public void userSeesTheForgotYourPassword() {
+       String actualForgotPassword = LoginPages.ForgotYourPasswordButton.getText();
+       String expectedForgotPassword = "FORGOT YOUR PASSWORD?";
+       Assert.assertEquals(expectedForgotPassword, actualForgotPassword);
+    }
+
+    @When("user enters the Forgot Your Password")
+    public void userEntersTheForgotYourPassword() {
+        LoginPages.ForgotYourPasswordButton.click();
+
+    }
+
+    @When("user sees the forget password page")
+    public void userSeesTheForgetPasswordPage() {
+        String actualForgotPasswordPage = LoginPages.ForgotPasswordPage.getText();
+        String expectedForgotPasswordPage = "Get Password";
+        Assert.assertEquals(expectedForgotPasswordPage, actualForgotPasswordPage);
+    }
+
+    @When("user sees the Remember me on this computer")
+    public void userSeesTheRememberMeOnThisComputer() {
+       String actualRememberMeCheckbox = LoginPages.RememberMe.getText();
+       String expectedRememberMeCheckbox = "Remember me on this computer";
+       Assert.assertEquals(expectedRememberMeCheckbox, actualRememberMeCheckbox);
+
+    }
+
+    @When("user clickable the Remember me on this computer")
+    public void userClickableTheRememberMeOnThisComputer() {
+        System.out.println("LoginPages.RememberMe.isSelected() = " + LoginPages.RememberMeCheckbox.isSelected());
+        LoginPages.RememberMeCheckbox.click();
+        System.out.println("LoginPages.RememberMeCheckbox.isSelected() = " + LoginPages.RememberMeCheckbox.isSelected());
+    }
+
+    @When("user uses enter keyboard login button")
+    public void userUsesEnterKeyboardLoginButton() {
+        LoginPages.loginButton.sendKeys(Keys.ENTER);
+
     }
 }

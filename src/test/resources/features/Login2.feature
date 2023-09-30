@@ -10,9 +10,6 @@ Feature: Login Function
     When user sees the Activity Stream
 
 
-
-
-
     Examples: Valid Credentials
       | username                       | password |
       | hr1@cybertekschool.com         | UserUser |
@@ -24,3 +21,21 @@ Feature: Login Function
       | marketing1@cybertekschool.com  | UserUser |
       | marketing10@cybertekschool.com | UserUser |
       | marketing20@cybertekschool.com | UserUser |
+
+  Scenario: Negative Scenario-> If user uses the invalid credentials
+    Given user lands on the login page
+    When user sees the login page
+    When user enters valid username "hr1@cybertekschool.com"
+    When user enters invalid password "useruser"
+    When user sees the login button
+    When user clicks the login button
+    When user sees warning messages
+
+  Scenario: Negative Scenario-> If user uses the invalid credentials
+    Given user lands on the login page
+    When user sees the login page
+    When user enters invalid username "hr1@gmail.com"
+    When user enters valid password "UserUser"
+    When user sees the login button
+    When user clicks the login button
+    When user sees warning messages

@@ -6,6 +6,7 @@ import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class Login_stepDefinitions  {
 
@@ -46,12 +47,30 @@ public class Login_stepDefinitions  {
     }
 
 
+    @When("user enters valid username {string}")
+    public void userEntersValidUsername(String validUsername) {
+        LoginPages.entersUsername.sendKeys(validUsername + Keys.ENTER);
+    }
 
+    @When("user enters invalid password {string}")
+    public void userEntersInvalidPassword(String invalidPassword) {
+        LoginPages.entersPassword.sendKeys(invalidPassword + Keys.ENTER);
+    }
 
+    @When("user sees warning messages")
+    public void userSeesWarningMessages() {
+        String actualMessage = LoginPages.warningMessage.getText();
+        String expectedMessage = "Incorrect login or password";
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
 
+    @When("user enters invalid username {string}")
+    public void userEntersInvalidUsername(String invalidUsername) {
+        LoginPages.entersUsername.sendKeys(invalidUsername + Keys.ENTER);
+    }
 
-
-
-
-
+    @When("user enters valid password {string}")
+    public void userEntersValidPassword(String validPassword) {
+        LoginPages.entersPassword.sendKeys(validPassword + Keys.ENTER);
+    }
 }

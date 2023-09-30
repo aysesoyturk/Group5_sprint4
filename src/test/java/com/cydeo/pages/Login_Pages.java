@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Login_Pages {
  public Login_Pages(){
+
      PageFactory.initElements(Driver.getDriver(), this);
 
     }
@@ -27,12 +28,9 @@ public class Login_Pages {
     @FindBy(xpath = "//*[@id='pagetitle']")
     public WebElement ActivityStream;
 
-    @FindBy(xpath = "//*[@id='user-block']")
-    public WebElement userProfile;
+    @FindBy(xpath = "//*[@id='login-popup']/div[2]")
+   public WebElement warningMessage;
 
-
-    @FindBy(xpath = "//*[@id='popup-window-content-menu-popup-user-menu']/div/div/a[3]/span[2]")
-    public WebElement logOut;
 
 
 }

@@ -1,6 +1,7 @@
+@Smoke
 Feature: Login Function
   User Story: As a user, I should be able to log in
-@Smoke
+
   Scenario Outline: Positive Scenario-> User can login with valid credentials
     Given user lands on the login page
     When user sees the login page

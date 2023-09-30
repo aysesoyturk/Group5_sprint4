@@ -4,6 +4,7 @@ import com.cydeo.pages.Login_Pages;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -40,6 +41,7 @@ public class Login_stepDefinitions  {
     @When("user clicks the login button")
     public void user_clicks_the_login_button() {
         LoginPages.loginButton.click();
+
     }
     @When("user sees the Activity Stream")
     public void user_sees_the_activity_stream() {
@@ -116,4 +118,15 @@ public class Login_stepDefinitions  {
         LoginPages.loginButton.sendKeys(Keys.ENTER);
 
     }
+
+    @When("user clicks Login")
+    public void userClicksLogin() {
+        LoginPages.entersUsername.click();
+    }
+
+    @When("user clicks Password")
+    public void userClicksPassword() {
+        LoginPages.entersPassword.click();
+    }
+
 }

@@ -36,6 +36,15 @@ Feature: Login Function
       | hr1@cybertakschool.com | user123         |
       | student@gmail.com      | UserUser        |
 
+  Scenario: User should be displayed if the password or username is empty
+    Given user lands on the login page
+    When user sees the login page
+    When user clicks Login
+    When user clicks Password
+    When user sees the login button
+    When user clicks the login button
+    When user sees warning messages
+
 
   Scenario: user enters the Forget Password
     Given user lands on the login page

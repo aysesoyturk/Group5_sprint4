@@ -7,12 +7,12 @@ import org.junit.runner.*;
 @CucumberOptions(
         plugin = {
                 "html:target/cucumber-report.html",
-                "json:target/cucumber-reports.json",
+                "json:target/cucumber-reports.json"
         },
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@Smoke"
 )
 public class CukesRunners {
 }

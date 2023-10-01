@@ -15,4 +15,3 @@ public class Hooks {
     public void teardown(){
         Driver.closeDriver();
     }
-}

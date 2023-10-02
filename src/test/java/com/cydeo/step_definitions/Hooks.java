@@ -7,11 +7,13 @@ import io.cucumber.java.Before;
 
 public class Hooks {
     @Before
-    public void setup(){
+    public void setup() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
 
     }
+
     @After
-    public void teardown(){
+    public void teardown() {
         Driver.closeDriver();
     }
+}

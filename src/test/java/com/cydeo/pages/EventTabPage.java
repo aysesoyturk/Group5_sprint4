@@ -21,10 +21,10 @@ public class EventTabPage {
     public WebElement timeTextBox;
 
     @FindBy(id="event-remind_typecal_3Jcl")
-    public WebElement timeType;
+    public WebElement timeTypeDropDown;
 
     @FindBy(id = "event-locationcal_3Jcl")
-    public WebElement eventLocation;
+    public WebElement eventLocationDropDown;
 
     @FindBy(id = "feed-event-dest-add-link")
     public WebElement membersTypeLink;

@@ -11,6 +11,9 @@ public class EventTabPage {
     public EventTabPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath = "//*[@id=\"logo_24_text\"]/span[1]")
+    public WebElement logo;
+
     @FindBy(xpath = "//*[@id=\"feed-add-post-form-tab-calendar\"]/span")
     public WebElement eventTab;
 
@@ -23,11 +26,23 @@ public class EventTabPage {
     @FindBy(id="event-remind_typecal_3Jcl")
     public WebElement timeTypeDropDown;
 
-    @FindBy(id = "event-locationcal_3Jcl")
+    @FindBy(xpath = "//*[@id=\"event-locationcal_3Jcl\"]")
     public WebElement eventLocationDropDown;
 
-    @FindBy(id = "feed-event-dest-add-link")
+    @FindBy(xpath = "//*[@id=\"feed-event-dest-cont\"]")
     public WebElement membersTypeLink;
+
+    @FindBy(id="destDepartmentTab_calnAJEM3")
+    public WebElement groupList;
+
+    @FindBy(xpath = "//*[@id=\"bx-lm-box-last-content\"]/table/tr/td/div[2]/div[2]/div[1]/a/div[2]")
+    public WebElement groupEmployeeList;
+
+    @FindBy(xpath = "//*[@id=\"bx-lm-box-last-content\"]/table/tr/td/div[2]/div[2]/div[2]/a/span/div[2]")
+    public WebElement realGroupAddAction;
+
+    @FindBy(xpath = "//*[@id=\"BXSocNetLogDestination\"]/span")
+    public WebElement closeButton;
 
     @FindBy(xpath = "//*[@id=\"calnAJEM3_last_UA\"]/div[3]/div")
     public WebElement addAllEmployee;
@@ -41,7 +56,7 @@ public class EventTabPage {
     @FindBy(xpath = "//*[@id=\"feed-cal-additional-show\"]/span[1]")
     public WebElement MoreLink;
 
-    @FindBy(id = "bx-im-external-recent-list")
+    @FindBy(id = "feed-cal-additional-inner")
     public WebElement MoreList;
 
     @FindBy(id="blog-submit-button-save")

@@ -3,7 +3,7 @@ Feature:As a user, I should be able to create events by clicking on Event tab un
 
   Scenario: : User must be able to login successfully
     Given user  on the main page
-    And user verify  "hr1@cybertekschool.com" and "UserUser"
+    And user verify  "helpdesk1@cybertekschool.com" and "UserUser"
     And user should clicks the login button
     Then user should see the main page
     And user should click event tab

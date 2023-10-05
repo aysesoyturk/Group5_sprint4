@@ -39,7 +39,7 @@ public class EventTab_stepDefinitions {
     }
     @Then("user should click setReminder box")
     public void user_should_click_set_reminder_box() {
-     /*  if(eventTabPage.reminderCheckBox.isSelected()) {
+      if(eventTabPage.reminderCheckBox.isEnabled()==true) {
 
            Assert.assertTrue(eventTabPage.timeTextBox.isDisplayed());
            Assert.assertTrue(eventTabPage.timeTypeDropDown.isDisplayed());
@@ -48,7 +48,7 @@ public class EventTab_stepDefinitions {
            eventTabPage.reminderCheckBox.click();
            Assert.assertTrue(eventTabPage.timeTextBox.isDisplayed());
            Assert.assertTrue(eventTabPage.timeTypeDropDown.isDisplayed());
-       }*/
+       }
     }
     @Then("user click the minute value box")
     public void user_click_the_minute_value_box() throws InterruptedException {
@@ -81,7 +81,7 @@ public class EventTab_stepDefinitions {
         eventTabPage.eventLocationDropDown.click();
         eventTabPage.eventLocationDropDown.clear();
         eventTabPage.eventLocationDropDown.sendKeys("East Meeting Room");
-        eventTabPage.eventLocationDropDown.click();
+
         Thread.sleep(2000);
 
     }

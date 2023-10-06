@@ -6,8 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Announcement_stepDefinitions {
-    CRM24_Employees_Page EmployeesPage = new CRM24_Employees_Page();
-    Announcement_Page AnnouncementPage = new Announcement_Page();
+       Announcement_Page AnnouncementPage = new Announcement_Page();
 
     @When("user click MORE button")
     public void user_click_more_button() {

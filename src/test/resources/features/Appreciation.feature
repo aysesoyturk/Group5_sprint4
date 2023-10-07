@@ -4,7 +4,7 @@ Feature: Default
 	Background:
 		#@SCRUM-1317
 		Given user lands on the login page
-		And user enters "helpdesk21@cybertekschool.com" and "UserUser"
+		And user enters "helpdesk57@cybertekschool.com" and "UserUser"
 		And user clicks the login button
 		And user sees the Activity Stream
 	

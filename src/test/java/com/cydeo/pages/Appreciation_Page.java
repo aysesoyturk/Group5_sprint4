@@ -15,7 +15,6 @@ public class Appreciation_Page {
     public WebElement moreButton;
 
 
-
     @FindBy(xpath = "(//span[.='Appreciation'])[1]")
     public WebElement appreciatonBtn;
 
@@ -27,44 +26,47 @@ public class Appreciation_Page {
 
  */
 
-@FindBy(xpath = "//span[@title='Link']//i")
+    @FindBy(xpath = "//span[@title='Link']//i")
     public WebElement link_icon;
 
-@FindBy(id = "linkidPostFormLHE_blogPostForm-text")
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-text")
     public WebElement writeText;
 
-@FindBy(id = "linkidPostFormLHE_blogPostForm-href")
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-href")
     public WebElement insertLink;
 
-@FindBy(xpath = "(//input[@type='button'])[1]")
+    @FindBy(xpath = "(//input[@type='button'])[1]")
     public WebElement saveButton;
 
-@FindBy(xpath = "(//a[.='Google'])")
+    @FindBy(xpath = "(//a[.='Google'])")
     public WebElement checkLink;
 
-@FindBy(xpath = "//span[@title='Quote text']")
+    @FindBy(xpath = "//span[@title='Quote text']")
     public WebElement quoteAdd;
 
 
-@FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
+    @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
     public WebElement typeQuote;
 
-@FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
+    @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
     public WebElement createdText;
 
-@FindBy(id = "bx-b-mention-blogPostForm")
+    @FindBy(id = "bx-b-mention-blogPostForm")
     public WebElement mention_button;
 
-@FindBy(id = "destLastTab_mention66572396")
+    @FindBy(id = "destLastTab_mention66572396")
     public WebElement recentBtn;
 
-@FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[1]")
-public WebElement addUser;
+    @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
+    public WebElement options;
 
-@FindBy(xpath = "//span[@class='bxhtmled-metion']")
+    @FindBy(xpath = "//div[.=\"hr78@cybertekschool.com\"]")
+    public WebElement addUser;
+
+    @FindBy(xpath = "//span[@class='bxhtmled-metion']")
     public WebElement addedUser;
 
-@FindBy(id = "bx-b-tag-input-blogPostForm")
+    @FindBy(id = "bx-b-tag-input-blogPostForm")
     public WebElement tagBtn;
 
     @FindBy(id = "TAGS_blogPostForm67abSn")

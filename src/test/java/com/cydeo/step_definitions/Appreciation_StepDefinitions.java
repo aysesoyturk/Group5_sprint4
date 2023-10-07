@@ -7,8 +7,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.WebDriverListener;
 
 import javax.swing.*;
 import java.util.Timer;
@@ -105,8 +109,13 @@ public class Appreciation_StepDefinitions {
     @Then("user should be able to add mention by clicking on the add mention icon")
     public void user_should_be_able_to_add_mention_by_clicking_on_the_add_mention_icon() {
         appreciationPage.mention_button.click();
-        BrowserUtils.waitFor(3);
-        appreciationPage.addUser.click();
+
+        BrowserUtils.waitFor(2);
+        appreciationPage.options.click();
+        Actions actions=new Actions(Driver.getDriver());
+        WebElement findSomebody=appreciationPage.addUser;
+        actions.moveToElement(findSomebody).click().perform();
+        BrowserUtils.waitFor(6);
 
     }
 
@@ -145,6 +154,7 @@ public class Appreciation_StepDefinitions {
     @Then("verify the appreciation has been sent.")
     public void verify_the_appreciation_has_been_sent() {
         assertTrue(appreciationPage.assertSent.isDisplayed());
+
     }
 
 

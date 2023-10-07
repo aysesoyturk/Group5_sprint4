@@ -12,7 +12,7 @@ import org.junit.runner.*;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@Event1601"
+        tags = "@SCRUM-1319"
 
 )
 public class CukesRunners {

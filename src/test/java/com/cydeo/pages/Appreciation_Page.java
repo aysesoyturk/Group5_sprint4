@@ -14,6 +14,8 @@ public class Appreciation_Page {
     @FindBy(xpath = "//*[@id=\"feed-add-post-form-link-text\"]")
     public WebElement moreButton;
 
+
+
     @FindBy(xpath = "(//span[.='Appreciation'])[1]")
     public WebElement appreciatonBtn;
 
@@ -49,5 +51,36 @@ public class Appreciation_Page {
 
 @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
     public WebElement createdText;
+
+@FindBy(id = "bx-b-mention-blogPostForm")
+    public WebElement mention_button;
+
+@FindBy(id = "destLastTab_mention66572396")
+    public WebElement recentBtn;
+
+@FindBy(xpath = "(//div[@class='bx-finder-box-item-t7-name'])[1]")
+public WebElement addUser;
+
+@FindBy(xpath = "//span[@class='bxhtmled-metion']")
+    public WebElement addedUser;
+
+@FindBy(id = "bx-b-tag-input-blogPostForm")
+    public WebElement tagBtn;
+
+    @FindBy(id = "TAGS_blogPostForm67abSn")
+    public WebElement inputTagLine;
+
+    @FindBy(xpath = "//span[@class='popup-window-button']")
+    public WebElement clickAddTaggBtn;
+
+    @FindBy(xpath = "//span[@class='feed-add-post-tags']")
+    public WebElement addedTag;
+
+    @FindBy(id = "blog-submit-button-save")
+    public WebElement sendAppreciation;
+
+    @FindBy(id = "feed-add-post-form-link-text")
+    public WebElement assertSent;
+
 
 }

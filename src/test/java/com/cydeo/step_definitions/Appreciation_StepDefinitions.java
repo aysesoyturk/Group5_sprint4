@@ -8,10 +8,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
+import javax.swing.*;
 import java.util.Timer;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 public class Appreciation_StepDefinitions {
+    String tag = " ";
+    String expectedText = " ";
     Appreciation_Page appreciationPage = new Appreciation_Page();
 
     @When("user clicks More button verify user can see Appreciation choice")
@@ -69,8 +76,8 @@ public class Appreciation_StepDefinitions {
     public void verify_the_link_is_added() {
         Driver.getDriver().switchTo().frame(0);
         appreciationPage.checkLink.isDisplayed();
-        String expectedLinkText="Google";
-        Assert.assertEquals(appreciationPage.checkLink.getText(),expectedLinkText);
+        String expectedLinkText = "Google";
+        Assert.assertEquals(appreciationPage.checkLink.getText(), expectedLinkText);
         Driver.getDriver().switchTo().parentFrame();
     }
 
@@ -84,51 +91,60 @@ public class Appreciation_StepDefinitions {
         Driver.getDriver().switchTo().parentFrame();
 
     }
+
     @Then("verify a quote is typed")
     public void verify_a_quote_is_typed() {
         Driver.getDriver().switchTo().frame(0);
         appreciationPage.createdText.isDisplayed();
-        String expectedText="Abraham";
+        expectedText = "Abraham";
         Assert.assertEquals(appreciationPage.createdText.getText(), expectedText);
         Driver.getDriver().switchTo().parentFrame();
     }
 
 
-
     @Then("user should be able to add mention by clicking on the add mention icon")
     public void user_should_be_able_to_add_mention_by_clicking_on_the_add_mention_icon() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        appreciationPage.mention_button.click();
+        BrowserUtils.waitFor(3);
+        appreciationPage.addUser.click();
+
     }
 
     @Then("verify mention is added")
     public void verify_mention_is_added() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Driver.getDriver().switchTo().frame(0);
+        appreciationPage.addedUser.isDisplayed();
+        Driver.getDriver().switchTo().parentFrame();
+
+
     }
 
     @Then("user should be able to add tags by clicking add tag icon")
     public void user_should_be_able_to_add_tags_by_clicking_add_tag_icon() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        appreciationPage.tagBtn.click();
+        tag = "#456";
+        appreciationPage.inputTagLine.sendKeys(tag);
+        appreciationPage.clickAddTaggBtn.click();
+
     }
 
     @Then("verify the tag is added")
     public void verify_the_tag_is_added() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(appreciationPage.addedTag.isDisplayed());
+        BrowserUtils.waitFor(3);
     }
 
     @Then("user should be able to send an appreciation")
     public void user_should_be_able_to_send_an_appreciation() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        appreciationPage.sendAppreciation.click();
+        BrowserUtils.waitFor(3);
+
+
     }
 
     @Then("verify the appreciation has been sent.")
     public void verify_the_appreciation_has_been_sent() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(appreciationPage.assertSent.isDisplayed());
     }
 
 

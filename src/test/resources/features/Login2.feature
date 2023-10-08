@@ -4,6 +4,8 @@ Feature: Login Function
 
   @SCRUM-1303
   Scenario Outline: "Login Function" Positive Scenario
+
+
     Given user lands on the login page
     When user sees the login page
     When user enters "<username>" and "<password>"

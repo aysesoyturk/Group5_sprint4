@@ -13,7 +13,8 @@ import org.junit.runner.*;
         glue = "com/cydeo/step_definitions",
         dryRun = false,
 
-        tags = "@SCRUM-1315"
+        tags = ""
+
 
 )
 public class CukesRunners {

@@ -38,3 +38,5 @@ Feature: As a user, I should be able to send announcement from Announcement subh
     When user click  Topic icon
     Then User should be able to write something
 
+  Scenario: 7-User should be able to send a announcement.
+    Then User should be able to send a announcement

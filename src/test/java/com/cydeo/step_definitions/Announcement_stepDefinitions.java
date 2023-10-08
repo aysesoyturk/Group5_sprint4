@@ -95,6 +95,7 @@ public class Announcement_stepDefinitions {
     public void userShouldBeAbleToRecordVideo() {
 
         System.out.println("***********************  not record   *****************************");
+
     }
 
     @When("User see show announcement")
@@ -124,15 +125,29 @@ public class Announcement_stepDefinitions {
     @Then("User should be able to write something")
     public void userShouldBeAbleToWriteSomething() throws InterruptedException {
 
+
+        System.out.println("error");
+
+
         Thread.sleep(2000);
-        announcementPage.topic.clear();
+        //announcementPage.topic.clear();
         announcementPage.topic.click();
         announcementPage.topic.sendKeys("1234" + Keys.ENTER);
 
         Thread.sleep(2000);
-        announcementPage.topicArea.click();
+        //announcementPage.topicArea.click();
         announcementPage.topicArea.sendKeys("abcd" + Keys.ENTER);
         announcementPage.send.click();
+
+
     }
 
+
+    @Then("User should be able to send a announcement")
+    public void userShouldBeAbleToSendAAnnouncement() {
+
+        announcementPage.announcementBtn.sendKeys("Hello World" + Keys.ENTER);
+        announcementPage.announcementSend.click();
+
+    }
 }

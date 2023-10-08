@@ -64,7 +64,8 @@ public class Announcement_Page {
     @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]/text()")
     public WebElement send;
 
-
+    @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]")
+    public WebElement announcementSend;
 }
 
 

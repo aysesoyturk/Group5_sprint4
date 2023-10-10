@@ -1,11 +1,14 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.Announcement_Page;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 public class Announcement_stepDefinitions {
     Announcement_Page announcementPage = new Announcement_Page();
@@ -74,6 +77,7 @@ public class Announcement_stepDefinitions {
     @Then("User should be able to add mention")
     public void userShouldBeAbleToAddMention() {
         announcementPage.addMentinon.click();
+        Assert.assertTrue(announcementPage.addMentinon.isDisplayed());
     }
 
     @When("user click  Record Video icon")
@@ -92,9 +96,18 @@ public class Announcement_stepDefinitions {
     }
 
     @Then("User should be able to Record Video.")
-    public void userShouldBeAbleToRecordVideo() {
+    public void userShouldBeAbleToRecordVideo() throws InterruptedException {
+        Thread.sleep(3000);
 
-        System.out.println("***********************  not record   *****************************");
+        announcementPage.recordVideoIcon.click();
+        announcementPage.recordText.isDisplayed();
+        announcementPage.recordText.click();
+
+        // Assert.assertTrue(announcementPage.recordError.isDisplayed());
+
+        if (announcementPage.recordError.isDisplayed()) {
+            System.out.println("***********************  not record   *****************************");
+        }
 
     }
 
@@ -125,29 +138,37 @@ public class Announcement_stepDefinitions {
     @Then("User should be able to write something")
     public void userShouldBeAbleToWriteSomething() throws InterruptedException {
 
-
-        System.out.println("error");
-
-
         Thread.sleep(2000);
-        //announcementPage.topic.clear();
+
         announcementPage.topic.click();
-        announcementPage.topic.sendKeys("1234" + Keys.ENTER);
+        announcementPage.topic.sendKeys("1234");
 
         Thread.sleep(2000);
-        //announcementPage.topicArea.click();
-        announcementPage.topicArea.sendKeys("abcd" + Keys.ENTER);
-        announcementPage.send.click();
 
+        WebElement iframe = Driver.getDriver().findElement(By.xpath("//html//iframe"));
+        Driver.getDriver().switchTo().frame(iframe);
+        WebElement topicBelow = Driver.getDriver().findElement(By.xpath("//html//body"));
+        topicBelow.sendKeys("abcd");
+        Driver.getDriver().switchTo().parentFrame();
+        announcementPage.send.click();
 
     }
 
 
     @Then("User should be able to send a announcement")
-    public void userShouldBeAbleToSendAAnnouncement() {
+    public void userShouldBeAbleToSendAAnnouncement() throws InterruptedException {
 
-        announcementPage.announcementBtn.sendKeys("Hello World" + Keys.ENTER);
-        announcementPage.announcementSend.click();
+        Thread.sleep(2000);
+
+        WebElement iframe = Driver.getDriver().findElement(By.xpath("//html//iframe"));
+        Driver.getDriver().switchTo().frame(iframe);
+
+        WebElement topicBelow = Driver.getDriver().findElement(By.xpath("//html//body"));
+        topicBelow.sendKeys("Hello World");
+        Thread.sleep(2000);
+        Driver.getDriver().switchTo().parentFrame();
+        announcementPage.send.click();
+
 
     }
 }

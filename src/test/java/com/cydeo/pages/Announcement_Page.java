@@ -16,7 +16,6 @@ public class Announcement_Page {
     public WebElement announcementBtn;
     @FindBy(xpath = "//*[@id=\"feed-add-post-destination-container\"]")
     public WebElement toArea;
-
     @FindBy(xpath = "//*[@id='popup-window-content-BXSocNetLogDestination']/div/div[1]/a[2]")
     public WebElement employeDepartmentsBtn;
     @FindBy(xpath = "//*[@id=\"bx-lm-box-last-content\"]/table/tr/td/div[2]/div[2]/div[135]/a/div[2]")
@@ -41,10 +40,19 @@ public class Announcement_Page {
     public WebElement addMentinonIcon;
     @FindBy(xpath = "//*[@id=\"feed-add-post-destination-container\"]")
     public WebElement addMentinon;
+
+    @FindBy(xpath = "//*[@id=\"destination5309862_last_UA\"]/div[3]/div")
+    public WebElement add;
     @FindBy(xpath = "//*[@id=\"post-buttons-bottom\"]/span[7]")
     public WebElement recordVideoIcon;
+    @FindBy(partialLinkText = "Record Video")
+    public WebElement recordVideoIcon2;
+    @FindBy(xpath = "\"popup-window-overlay-bx-popup-videomessage-popup\"")
+    public WebElement recordVideoIcon3;
     @FindBy(xpath = "//*[@id=\"popup-window-content-bx-popup-videomessage-popup\"]")
     public WebElement recordText;
+    @FindBy(xpath = "//*[@id=\"popup-window-content-bx-popup-videomessage-popup\"]")
+    public WebElement recordError;
     @FindBy(xpath = "//*[@id=\"bx-popup-videomessage-popup\"]/div[3]/span[1]")
     public WebElement allowBtn;
     @FindBy(xpath = "//*[@id=\"feed-add-post-content-important\"]/div/div/div/span[1]")
@@ -61,11 +69,9 @@ public class Announcement_Page {
     public WebElement topic;
     @FindBy(xpath = "//body[@style='min-height: 184px;']")
     public WebElement topicArea;
-    @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]/text()")
+    @FindBy(id = "blog-submit-button-save")
     public WebElement send;
 
-    @FindBy(xpath = "//*[@id=\"blog-submit-button-save\"]")
-    public WebElement announcementSend;
 }
 
 

@@ -44,7 +44,7 @@ Feature: Employee menu
   Scenario: User should be able to display telephone directory
    Then User display the "Telephone Directory" module
 
-@wip
+
   Scenario: User should be able to send message to employee from the telephone directory
   When User click the "Telephone Directory" module
   And User clicks on the name of one of the employees in the employee list

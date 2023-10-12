@@ -13,7 +13,7 @@ import org.junit.runner.*;
         glue = "com/cydeo/step_definitions",
         dryRun = false,
 
-        tags = ""
+        tags = "@wip"
 
 
 )
